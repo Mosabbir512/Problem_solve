@@ -1,0 +1,20 @@
+# Take the input here
+number = int(input())
+
+# Function definition starts here
+def factorial(n):
+    result = 1
+    if n < 0:
+        return -1
+    elif n == 0:
+        return 1
+    else:
+        for i in range(1, n + 1):  # corrected the loop
+            result *= i
+        return result  # corrected the indentation
+
+# Function definition ends here
+
+# Do not alter the code typed below
+k = factorial(number)
+print(k)
