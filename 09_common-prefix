@@ -1,0 +1,18 @@
+#input has been taken for you
+
+string1=input()
+string2=input()
+
+#start writing your code to find largest common prefix here
+string1=string1.lower()
+string2=string2.lower()
+len1=len(string1)
+len2=len(string2)
+min_len=min(len1,len2)
+for i in range(min_len):
+    if string2[i]!=string1[i]:
+        break 
+if i==0:
+    print(-1)
+else:
+    print(string1[:i])
