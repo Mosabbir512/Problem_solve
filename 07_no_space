@@ -1,0 +1,27 @@
+#take input here
+s=input()
+s=s.lower()
+#write code to format the string s as asked 
+words=s.split(' ')
+
+final_list=[word[0].upper()+word[1:] for word in words]
+final_string='_'.join(final_list)
+print(final_string)
+
+
+
+
+
+
+
+// 2nd code same 
+#take input here
+s=input()
+s=s.lower()
+#write code to format the string s as asked 
+words=s.split(' ')
+
+#final_list=[word[0].upper()+word[1:] for word in words]
+final_list=[word.title() for word in words]
+final_string='_'.join(final_list)
+print(final_string)
