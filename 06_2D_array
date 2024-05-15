@@ -1,0 +1,16 @@
+#take input on your own here
+import ast 
+mylist=ast.literal_eval(input())
+m=mylist[0]
+n=mylist[1]
+
+
+#start writing code here
+final=[0]*n 
+final=[list(final) for i in range(m)]
+for i in range(m):
+    for j in range(n):
+        if i==0 or j==0 or i==m-1 or j==n-1:
+            final[i][j]=1 
+for pr in final:
+    print(pr)
