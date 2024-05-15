@@ -1,0 +1,13 @@
+# Read the input string
+
+s = input()
+vowel="aeiouAEIOU"
+v=""
+c=""
+for i in s:
+    if i in vowel:
+        v=v+i 
+    else :
+        c=c+i 
+fin=v+c 
+print(fin)
