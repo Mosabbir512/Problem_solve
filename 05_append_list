@@ -1,0 +1,21 @@
+#you have to take input on your own here
+
+import ast 
+team=ast.literal_eval(input())
+applicant=ast.literal_eval(input())
+#write your code here
+def check_avobe_avgr(data, check):
+     s=0
+     for item in data:
+         s=s+item
+     avg= s / len(data)
+     if check>avg :
+         return 1
+     else:
+        return 0
+
+for appl in applicant:
+    is_add=check_avobe_avgr(team,appl)
+    if is_add==1:
+        team.append(appl)
+print(team)
