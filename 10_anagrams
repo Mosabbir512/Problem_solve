@@ -1,0 +1,14 @@
+#take input here
+s1=input()
+s2=input()
+
+#code here to check if they are anagrams or no
+def anagram(s1,s2):
+    if len(s1)!=len(s2):
+        return False
+    for i in range(len(s1)):
+        if s1.count(s1[i])!=s2.count(s2[i]):
+            return False
+    return True
+
+print(anagram(s1,s2))
