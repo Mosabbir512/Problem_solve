@@ -1,0 +1,9 @@
+#input have been taken for you here
+import ast
+input_str = input()
+input_list = ast.literal_eval(input_str)
+
+#start writing your code here
+
+
+print(min(input_list))
