@@ -1,0 +1,15 @@
+#take input here
+import ast 
+mylist=ast.literal_eval(input())
+#remove duplicates from the list
+d={}
+for item in mylist:
+    if item  not in d:
+        d[item]=1
+    else:
+        d[item]=d[item]+1
+
+
+#print the list without duplicates
+print(list(d.keys()))
+
