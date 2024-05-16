@@ -1,0 +1,21 @@
+#input has been taken for you
+import ast
+input_list= ast.literal_eval(input())
+
+#start writing your code from here
+def max_distance(nums):
+    max_dist = 0
+    index_map = {}
+
+    for i, num in enumerate(nums):
+        if num not in index_map:
+            index_map[num] = i
+        else:
+            max_dist = max(max_dist, i - index_map[num])
+
+    return max_dist
+
+# Sample input
+nums=input_list
+# Call the function and print the result
+print(max_distance(nums))
