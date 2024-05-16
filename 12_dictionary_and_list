@@ -1,0 +1,15 @@
+#input has been taken for you
+import ast
+input_str = input()
+#input dictionary has been received in input_dict
+input_dict = ast.literal_eval(input_str)
+
+
+#start writing your code here
+f_list=[]
+for keys in input_dict:
+    for word in input_dict[keys]:
+        f_list.append(keys+'_'+word)
+
+print(f_list)
+
