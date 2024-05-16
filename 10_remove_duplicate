@@ -1,0 +1,14 @@
+Deleting Key
+Suppose dict_1 = {"Python'':40, "R'':45}. What command should be used to delete the entry?
+
+
+dict_1.delete('R':45)
+
+
+del dict_1['R']
+
+
+dict_1.delete('R')
+
+
+del dict_1('R':40)
