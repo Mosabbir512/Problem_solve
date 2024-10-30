@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int siz=prices.size(),ct=0;
+        map<int,int>mp;
+        for(int i=0;i<siz;i++){
+            mp[prices[i]]++;
+        }
+        for(int i=0;i<siz-1;i++){
+            int tm=prices[i];
+            mp[tm]--;
+            if(mp[tm]==0){
+                mp.erase(mp.find(tm));
+            }
+            auto it=*--mp.end();
+            int val=it.first;
+            int sub=val-tm;
+            cout<<sub<<" "<<tm<<endl;
+            if(sub>ct)ct=sub;
+        }
+        return ct;
+    }
+};
