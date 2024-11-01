@@ -1,0 +1,21 @@
+class Solution {
+public:
+map<char,int>symbol={{'(',1},{'{',2},{'[',3},{']',-3},{'}',-2},{')',-1}};
+    bool isValid(string s) {
+        stack<int> st;
+        for(int i=0;i<s.size();i++){
+            int k=symbol[s[i]];
+            if(k>0)st.push(k);
+            else {
+                if(st.empty())return false;
+                int tp=st.top();
+                st.pop();
+                if(tp+k!=0)return false;
+            }
+        }
+       
+        if(st.size()==0)return true;
+        else return false;
+      
+    }
+};
