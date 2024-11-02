@@ -1,0 +1,31 @@
+class Solution {
+public:
+    string addBinary(string a, string b) {
+          int a1=a.size(),b1=b.size();
+    string s="";
+    reverse(a.begin(),a.end());
+    reverse(b.begin(),b.end());
+    int mx=max(a1,b1);
+    if(a1<mx){
+        for(int i=a1;i<mx;i++)a+='0';
+    }
+    if(b1<mx){
+        for(int i=b1;i<mx;i++)b+='0';
+    }
+
+    int r=0;
+    for(int i=0;i<mx;i++){
+        if(a[i]=='1')++r;
+        if(b[i]=='1')++r;
+        if(r==1 || r==3)s+='1';
+         else s+='0';
+         if(r>=2)r=1;
+         else r=0;
+    }
+    if(r)s+='1';
+    // cout<<a<<" "<<b<<endl;
+
+    reverse(s.begin(),s.end());
+    return s;
+    }
+};
