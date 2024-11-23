@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int cal(string &s,int lf,int rg){
+        while(lf>=0 && rg<s.size() && s[lf]==s[rg]){
+            lf--,rg++;
+        }
+        return rg-lf-1;
+    }
+    string longestPalindrome(string s) {
+        if(s.size()==1 || s.size()==0)return s;
+        int n=s.size();
+        int st=0,mx=0;
+        for(int i=0;i<n;i++){
+            int len1=cal(s,i,i); // for odd string , i means middle
+            int len2=cal(s,i,i+1);   // for even string
+            int len=max(len1,len2);
+            if(mx<len){
+                mx=len;
+                st=i-(len-1)/2;
+            }
+        }
+        return s.substr(st,mx);
+    }
+};
