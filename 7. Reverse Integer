@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int reverse(int x) {
+    long long ans=0;
+      int xx=x;
+      while(xx){
+        int r=xx%10;
+        xx/=10;
+        ans=(ans*10)+r;
+      }
+       int st=INT_MAX;
+       int en=INT_MIN;
+       if(ans<=st && ans>=en)return ans;
+       else return 0;
+    }
+};
