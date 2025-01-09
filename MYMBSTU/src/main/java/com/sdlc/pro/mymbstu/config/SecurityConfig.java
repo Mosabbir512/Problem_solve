@@ -17,7 +17,7 @@ public class SecurityConfig {
     }
 
     // Define the SecurityFilterChain bean
-    @Bean
+    //@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
@@ -26,7 +26,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                         .loginPage("/login")  // Use your custom login page
-                        .loginProcessingUrl("/processLogin") // Backend endpoint to process login
+                        .loginProcessingUrl("/login") // Backend endpoint to process login
                         .defaultSuccessUrl("/home", true) // Redirect after successful login
                         .failureUrl("/login?error=true") // Redirect after failed login
                         .permitAll()
