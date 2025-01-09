@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Management</title>
+  <a href="/api/v1/home" style="display: inline-block; margin: 1rem 0; text-decoration: none; color: #007BFF;">← Back to Homepage</a>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #28a745;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .search-container input {
+      width: 300px;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+    .search-container button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+      transition: background-color 0.3s;
+    }
+    .search-container button:hover {
+      background-color: #1e7b34;
+    }
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    .service-card h2 {
+      font-size: 1.5rem;
+      color: #28a745;
+      margin-bottom: 0.5rem;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .service-card button {
+      background-color: #28a745;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .service-card button:hover {
+      background-color: #1e7b34;
+    }
+    .back-link {
+      display: inline-block;
+      margin: 1rem 0;
+      text-decoration: none;
+      color: #28a745;
+      font-size: 1rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Medical Management</h1>
+  <p>Access medical services and records at your fingertips</p>
+</header>
+
+<main>
+<!--  <a href="/api/v1/home" class="back-link">&larr; Back to Homepage</a>-->
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" placeholder="Search medical services or records..." />
+    <button>Search</button>
+  </div>
+
+  <!-- Services List -->
+  <section class="service-list">
+    <div class="service-card">
+      <h2>Appointment Booking</h2>
+      <p>Book an appointment with doctors and specialists.</p>
+      <button>Book Now</button>
+    </div>
+    <div class="service-card">
+      <h2>Medical Records</h2>
+      <p>Access and manage your medical history and reports.</p>
+      <button>View Records</button>
+    </div>
+    <div class="service-card">
+      <h2>Health Checkups</h2>
+      <p>Schedule regular health checkups and diagnostic tests.</p>
+      <button>Schedule</button>
+    </div>
+    <div class="service-card">
+      <h2>Emergency Services</h2>
+      <p>Contact emergency services and quick assistance.</p>
+      <button>Contact Now</button>
+    </div>
+  </section>
+</main>
+</body>
+</html>

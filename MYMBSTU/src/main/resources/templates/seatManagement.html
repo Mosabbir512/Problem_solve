@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hall Seat Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .hall-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hall-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hall-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    .hall-card h2 {
+      font-size: 1.2rem;
+      color: #007BFF;
+      margin-bottom: 0.5rem;
+    }
+    .hall-card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background-color: #f4f4f9;
+      color: #666;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Hall Seat Management</h1>
+  <p>Select your desired hall for seat management</p>
+</header>
+
+<main>
+  <section class="hall-container">
+    <div class="hall-card" onclick="location.href='/api/v1/halls/jamh'">
+      <h2>Jananeta Abdul Mannan Hall</h2>
+    </div>
+    <div class="hall-card" onclick="location.href='/api/v1/halls/bsmrh'">
+      <h2>Bangabandhu Sheikh Mujibur Rahman Hall</h2>
+    </div>
+    <div class="hall-card" onclick="location.href='/api/v1/halls/szrh'">
+      <h2>Shahid Ziaur Rahman Hall</h2>
+    </div>
+    <div class="hall-card" onclick="location.href='/api/v1/halls/srh'">
+      <h2>Sheikh Rasel Hall</h2>
+    </div>
+    <div class="hall-card" onclick="location.href='/api/v1/halls/akbh'">
+      <h2>Alema Khatun Bhashani Hall</h2>
+    </div>
+    <div class="hall-card" onclick="location.href='/api/v1/halls/jih'">
+      <h2>Shaheed Janani Jahanara Imam Hall</h2>
+    </div>
+    <div class="hall-card" onclick="location.href='/api/v1/halls/bmsfmh'">
+      <h2>Bangamata Sheikh Fazilatunnesa Mujib Hall</h2>
+    </div>
+    <div class="hall-card" onclick="location.href='/api/v1/halls/sirajganj_bmsfmh'">
+      <h2>Bangamata Sheikh Fazilatunnesa Mujib Hall</h2>
+      <p>Sirajganj campus</p>
+    </div>
+    <div class="hall-card" onclick="location.href='/api/v1/halls/sirajganj_smaah'">
+      <h2>Shaheed M. Monsur Ali Hall</h2>
+      <p>Sirajganj campus</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 MYMBSTU. All rights reserved.</p>
+</footer>
+</body>
+</html>

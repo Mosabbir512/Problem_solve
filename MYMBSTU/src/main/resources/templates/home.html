@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYMBSTU Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .user-info {
+            background-color: #e9ecef;
+            padding: 1rem;
+            text-align: right;
+            font-size: 1rem;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem auto;
+            gap: 2rem;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+        .feature-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 280px;
+            text-align: center;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .feature-card h2 {
+            font-size: 1.5rem;
+            color: #007BFF;
+            margin-bottom: 0.5rem;
+        }
+        .feature-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .feature-card a {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .feature-card a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #f4f4f9;
+            color: #666;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to MYMBSTU</h1>
+    <p>Your comprehensive management system for MBSTU, Tangail, Bangladesh</p>
+</header>
+
+<div class="user-info">
+    <!-- Dynamic content for logged-in user -->
+    <p>Welcome, <strong>${user.username}</strong>! (<span>${user.role}</span>) | <a href="/logout">Logout</a></p>
+</div>
+
+<main>
+    <section class="features">
+        <div class="feature-card">
+            <h2>Hall Token Management</h2>
+            <p>Easily handle token systems for hall services and activities.</p>
+            <a href="/tokenManagement">Explore</a>
+        </div>
+        <div class="feature-card">
+            <h2>Hall Seat Management</h2>
+            <p>Manage your hall allocations, seat availability, and more.</p>
+            <a href="/SeatManagement">Explore</a>
+        </div>
+        <div class="feature-card">
+            <h2>Medical Centre</h2>
+            <p>Access medical services and maintain health records.</p>
+            <a href="/medicalManagement">Explore</a>
+        </div>
+        <div class="feature-card">
+            <h2>Admission Management</h2>
+            <p>Streamline the admission process efficiently.</p>
+            <a href="/admissionManagement">Explore</a>
+        </div>
+        <div class="feature-card">
+            <h2>Teacher & Staff Information</h2>
+            <p>Find detailed information about teachers and staff.</p>
+            <a href="/teacherStaffInfo">Explore</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 MYMBSTU. All rights reserved. Designed for MBSTU, Tangail, Bangladesh.</p>
+</footer>
+</body>
+</html>
