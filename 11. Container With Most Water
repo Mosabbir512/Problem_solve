@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int ans=0,n=height.size();
+        map<int,multiset<int>>mp;
+        for(int i=0;i<n;i++){
+            mp[height[i]].insert(i+1);
+            mp[0].insert(0);
+
+        }
+        int mx=INT_MIN,mn=INT_MAX;
+        for(auto it=--mp.end();it!=mp.begin();--it){
+          int tm=it->first;
+           int lw=*it->second.begin(),hi=*--it->second.end();
+           mx=max(mx,hi);
+           mn=min(mn,lw);
+           ans=max(ans,(mx-mn)*tm);
+        }
+    return ans;
+    }
+};

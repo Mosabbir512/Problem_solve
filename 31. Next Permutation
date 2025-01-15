@@ -1,0 +1,29 @@
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int n=nums.size();
+        vector<int>v(n,0);
+        multiset<int>st;
+        for(int i=n-1;i>=0;i--){
+            int tm=nums[i]+1;
+            auto v = st.lower_bound(tm);
+            if(v!=st.end()){
+                  int val=*v;
+                  st.insert(nums[i]);
+                  nums[i]=val;
+                  st.erase(v);
+                  for(auto it:st){
+                    i++;
+                    nums[i]=it;
+                  }
+                  return;
+            }
+            else st.insert(nums[i]);
+        }
+        int i=0;
+        for(auto it:st){
+            nums[i]=it;
+            ++i;
+        }
+    }
+};
