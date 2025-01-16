@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int n=nums.size();
+        int l=0,h=n-1;
+        int mid;
+       while(l<h){
+        mid=(l+h)/2;
+        cout<<l<<" "<<mid<<" "<<h<<" "<<nums[l]<<" "<<nums[mid]<<" "<<nums[h]<<endl;
+        if(nums[mid]==target)return mid;
+        if(l==mid || h==mid)break;
+        if(nums[l]<nums[h]){
+            if(target<nums[mid])h=mid-1;
+            else l=mid;
+            continue;
+        }
+        int tm_mid=(l+mid)/2;
+        if(nums[l]<=nums[tm_mid] && nums[tm_mid]<=nums[mid]){
+            if(target>=nums[l] && target<=nums[mid])h=mid;
+            else l=mid+1;
+        }else{
+             if(target<=nums[h] && target>=nums[mid])l=mid;
+             else h=mid-1;
+        }
+
+       }
+       if(target==nums[l])return l;
+       else if(target==nums[h])return h;
+       else return -1;
+    }
+};
