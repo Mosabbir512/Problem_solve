@@ -1,0 +1,44 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+ * right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int mindepth(TreeNode* left, TreeNode* right, int l, int r) {
+        bool y1 = false, y2 = false;
+        if (!left && !right)
+            return l;
+        int ans1 = l, ans2 = l;
+        if (left == nullptr)
+            ans1 = l;
+        else {
+            y1=true;
+            ans1 = mindepth(left->left, left->right, l + 1, l + 1);
+        }
+        if (right == nullptr)
+            ans2 = r;
+        else {
+            y2=true;
+            ans2 =  mindepth(right->left, right->right, r + 1, r + 1);
+        }
+        int ans=0;
+        if(y1 && y2)ans=min(ans1,ans2);
+        else ans=max(ans1,ans2);
+        return ans;
+    }
+    int minDepth(TreeNode* root) {
+        if (!root)
+            return 0;
+        int ans = mindepth(root->left, root->right, 1, 1);
+        cout << ans << endl;
+        return ans;
+    }
+};
