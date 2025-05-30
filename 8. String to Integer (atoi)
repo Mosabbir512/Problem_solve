@@ -1,0 +1,43 @@
+class Solution {
+public:
+    int myAtoi(string s) {
+    
+        long long nm=pow(2,31);
+        nm*=(-1);
+        long long pm=pow(2,31)-1;
+        cout<<nm<<" "<<pm<<endl;
+        int n=s.size();
+        bool sing=0;
+        int i=0;
+        while(s[i]==' '){
+            i++;
+        }
+        if(s[i]=='-' || s[i]=='+'){
+            if(s[i]=='-')
+            sing=1;
+            ++i;
+        }
+        while(s[i]=='0'){
+            i++;
+        }
+        long long ans=0,ct=0;
+        while(s[i]>='0' && s[i]<='9' && i<n){
+            ans=ans*10;
+            ans+=(s[i]-48);
+            i++;
+            ct++;
+            if(ct==11)break;
+        }
+        if(sing){
+            ans*=(-1);
+            cout<<ans<<endl;
+            if(ans>=nm)return ans;
+            return nm;
+        }
+        else {
+            cout<<ans<<endl;
+            if(ans<=pm)return ans;
+            return pm;
+        }
+    }
+};
