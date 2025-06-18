@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;cin>>t;
+	while(t--){
+	    int n;cin>>n;
+	    int arr[n];
+	    for(int i=0;i<n;i++)cin>>arr[i];
+	    if(n==1)cout<<0<<endl;
+	    else {
+	        sort(arr,arr+n);
+	        vector<pair<int,int>>pr;
+	        for(int i=1;i<n;i++){
+	            pr.push_back({arr[i]-arr[i-1]+1,arr[i]+arr[i-1]-1});
+	        }
+	        sort(pr.begin(),pr.end());
+	        int last=pr[0].second;
+	        int ans=(pr[0].second-pr[0].first)+1;
+	        for(int i=1;i<pr.size();i++){
+	            int a=pr[i].first,b=pr[i].second;
+	            if(b<=last)continue;
+	            if(a<=last){
+	                ans+=(b-last);
+	            }
+	            else {
+	                ans+=(b-a+1);
+	            }
+	            last=b;
+	        }
+	         cout<<ans<<endl;
+	    }
+	   
+	}
+
+}
